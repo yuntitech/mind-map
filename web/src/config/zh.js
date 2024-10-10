@@ -55,10 +55,10 @@ export const fontFamilyList = [
 ]
 
 // 字号
-export const fontSizeList = [10, 12, 16, 18, 24, 32, 48]
+export const fontSizeList = [9, 10,10.5, 12, 16, 18, 24, 32, 48]
 
 // 行高
-export const lineHeightList = [1, 1.5, 2, 2.5, 3]
+export const lineHeightList = [1, 1.2, 1.5, 2, 2.5, 3]
 
 // 颜色
 export const colorList = [

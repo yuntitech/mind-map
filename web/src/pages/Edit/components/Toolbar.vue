@@ -458,7 +458,42 @@ export default {
 
     // 创建本地文件
     async createNewLocalFile() {
-      await this.createLocalFile(exampleData)
+      try {
+        const confirmResult = await this.$confirm(
+          this.$t('toolbar.saveConfirmMessage'),
+          this.$t('toolbar.saveConfirmTitle'),
+          {
+            confirmButtonText: this.$t('toolbar.save'),
+            cancelButtonText: this.$t('toolbar.dontSave'),
+            type: 'warning'
+          }
+        )
+        
+        if (confirmResult === 'confirm') {
+          // 用户选择保存
+          await this.saveLocalFile()
+        }
+        
+        // 无论是否保存,都重新加载文件
+        this.reloadFile()
+      } catch (error) {
+        if (error === 'cancel') {
+          // 用户选择不保存,直接重新加载文件
+          this.reloadFile()
+        } else {
+          console.error('创建新文件时发生错误:', error)
+          this.$message.error(this.$t('toolbar.newFileError'))
+        }
+      }
+    },
+
+    // 重新加载文件
+    reloadFile() {
+      this.$store.commit('setIsHandleLocalFile', false)
+      fileHandle = null
+      this.isFullDataFile = true
+      this.$bus.$emit('setData', exampleData)
+      this.$message.success(this.$t('toolbar.newFileCreated'))
     },
 
     // 另存为

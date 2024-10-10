@@ -877,9 +877,6 @@ const data5 = {
             {
                 "data": {
                     "text": "二级节点",
-                    "generalization": {
-                        "text": "概要",
-                    }
                 },
                 "children": [
                     {
@@ -921,14 +918,9 @@ const rootData = {
 }
 
 export default {
-    // ...data1,
-    // ...data2,
-    // ...data3,
-    // ...data4,
     ...data5,
-    // ...rootData,
     "theme": {
-        "template": "classic4",
+        "template": "default1",
         "config": {
             // 自定义配置...
         }

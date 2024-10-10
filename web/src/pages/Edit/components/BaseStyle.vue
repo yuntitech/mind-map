@@ -618,6 +618,24 @@
           ></el-slider>
         </div>
       </div>
+      <!-- 节点换行宽度 -->
+      <div class="title noTop">{{ $t('baseStyle.nodeWrapWidth') }}</div>
+        <div class="row">
+          <div class="rowItem">
+            <span class="name">{{ $t('baseStyle.nodeWidth') }}</span>
+            <el-slider
+              :min="0"
+              :max="1000"
+              style="width: 200px"
+              v-model="style.textAutoWrapWidth"
+              @change="
+              value => {
+                update('textAutoWrapWidth', value)
+              }
+            "
+            ></el-slider>
+          </div>
+        </div>
       <!-- 图片 -->
       <div class="title noTop">{{ $t('baseStyle.image') }}</div>
       <div class="row">
@@ -915,7 +933,7 @@
         </div>
       </div>
       <!-- 配置是否启用富文本编辑 -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="rowItem">
           <el-checkbox
             v-model="enableNodeRichText"
@@ -923,7 +941,7 @@
             >{{ $t('baseStyle.isEnableNodeRichText') }}</el-checkbox
           >
         </div>
-      </div>
+      </div> -->
       <!-- 配置鼠标滚轮行为 -->
       <div class="row">
         <div class="rowItem">
@@ -1100,6 +1118,7 @@ export default {
         associativeLineColor: '',
         associativeLineWidth: 0,
         associativeLineActiveWidth: 0,
+        textAutoWrapWidth: 300,
         associativeLineDasharray: '',
         associativeLineActiveColor: '',
         associativeLineTextFontSize: 0,
@@ -1381,6 +1400,11 @@ export default {
         this.style[key] = ''
       } else {
         this.style[key] = value
+      }
+      if (key === 'textAutoWrapWidth') {
+        this.mindMap.updateConfig({
+          textAutoWrapWidth: value
+        })
       }
       this.data.theme.config[key] = value
       this.$bus.$emit('showLoading')

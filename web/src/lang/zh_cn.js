@@ -14,6 +14,8 @@ export default {
     lineOfOutline: '概要的连线',
     showArrow: '是否显示箭头',
     nodePadding: '节点内边距',
+    nodeWrapWidth: '节点换行宽度',
+    nodeWidth: '宽度',
     nodeMargin: '节点外边距',
     horizontal: '水平',
     vertical: '垂直',
@@ -290,7 +292,15 @@ export default {
     creatingTip: '正在创建文件',
     directory: '目录',
     newFileTip: '新建文件前请先导出当前编辑的文件，谨防内容丢失',
-    openFileTip: '打开文件前请先导出当前编辑的文件，谨防内容丢失'
+    openFileTip: '打开文件前请先导出当前编辑的文件，谨防内容丢失',
+    saveCurrentFileTip: '是否保存当前文件?',
+    save: '保存',
+    notSave: '不保存',
+    saveConfirmMessage: "是否需要保存当前文件?",
+    saveConfirmTitle: "保存确认",
+    dontSave: "不保存",
+    newFileError: "创建新文件时发生错误",
+    newFileCreated: "新文件已创建"
   },
   edit: {
     newFeatureNoticeTitle: '新特性提醒',

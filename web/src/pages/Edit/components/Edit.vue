@@ -361,6 +361,7 @@ export default {
         viewData: view,
         nodeTextEditZIndex: 1000,
         nodeNoteTooltipZIndex: 1000,
+        textAutoWrapWidth: 300,
         customNoteContentShow: {
           show: (content, left, top, node) => {
             this.$bus.$emit('showNoteContent', content, left, top, node)
