@@ -1,6 +1,10 @@
 // 字体列表
 export const fontFamilyList = [
   {
+    name: '方正宋三_GBK',
+    value: '方正宋三简体',
+  },
+  {
     name: '宋体',
     value: '宋体, SimSun, Songti SC'
   },
