@@ -1,0 +1,24 @@
+{
+  "name": "yuntiMindMap",
+  "version": "0.0.1",
+  "type": "module",
+  "homepage": "/bizmodule/yuntiMindMap/",
+  "yunti": {
+    "deploy": {
+      "buildDir": "./dist",
+      "serverPath": "server/bizmodule/yuntiMindMap/",
+      "code": "yuntiMindMap",
+      "version": "pcversions",
+      "uploadUrl": "https://iwatch2.bookln.cn/webAppManage/registry.do",
+      "url": "https://www.yuntim.com/bizmodule/yuntiMindMap/index.htm"
+    }
+  },
+"scripts": {
+    "dev": "cd web && npm run serve",
+    "build": "tsx ./scripts/build.mts",
+    "deploy": "pnpm yunti deploy"
+  },
+  "devDependencies": {
+     "zx": "7.1.1"
+  }
+}
